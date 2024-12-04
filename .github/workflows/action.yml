@@ -27,3 +27,11 @@ jobs:
         steps:
             - name: Deploy the Drink to github pages
               uses: actions/deploy-pages@v4
+    
+    security:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Test for public javascript library vulnerabilities 
+          uses: lirantal/is-website-vulnerable@main
+          with:
+            scan-url: "https://vidurshah.github.io/L13-activity/"
